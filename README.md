@@ -2,7 +2,7 @@
 
 ## Notes
 This is a work-in progress application that build using react-native.
-This uses react, redux and hooks for the project.
+This uses react, redux and hooks for the implementation of the functionalities.
 
 To Do:
 1. Fix Bug: Clearing the status of cards after the player click on the reset button
