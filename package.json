@@ -9,6 +9,7 @@
     "test": "jest",
     "lint": "eslint ."
   },
+  "lint": "eslint *.js **/*.js",
   "dependencies": {
     "expo": "^38.0.9",
     "react": "16.13.1",
@@ -25,6 +26,13 @@
     "jest": "^26.4.0",
     "metro-react-native-babel-preset": "^0.62.0",
     "react-test-renderer": "16.13.1"
+  },
+  "prettier": {
+    "bracketSpacing": true,
+    "jsxBracketSameLine": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all"
   },
   "jest": {
     "preset": "react-native"

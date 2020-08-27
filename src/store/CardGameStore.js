@@ -1,4 +1,6 @@
-import { createStore } from 'redux'
-import reducer from '../reducer/CardGameReducer'
+import { createStore } from 'redux';
+import reducer from '../reducer/CardGameReducer';
 
-export const cardStore = createStore(reducer)
+export const cardStore = createStore(reducer);
+
+export default cardStore;

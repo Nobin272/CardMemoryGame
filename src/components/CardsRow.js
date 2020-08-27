@@ -1,13 +1,16 @@
-import React from 'react'
-import { View } from 'react-native'
+import React from 'react';
+import { View } from 'react-native';
 
-import Card from './Card'
+import Card from './Card';
 
 const CardsRow = (props) => {
-    return(
-        <View style= {{flex: 1, backgroundColor: "blue", margin: 10}}>
-            {props.cards.map(card => <Card onClick={(card) => props.onClick(card)} card={card} isFlipped={card.isFlipped} key={card.id} {...card}/>)}
-        </View>
-    )
-}
-export default CardsRow
+  const renderCard = () => props.cards.map((cardItem) => <Card onClick={(card) => props.onClick(card)} card={cardItem} isFlipped={cardItem.isFlipped} key={cardItem.id} {...cardItem} />);
+
+  return (
+    <View style={{ flex: 1, margin: 10 }}>
+      { renderCard() }
+    </View>
+  );
+};
+
+export default CardsRow;

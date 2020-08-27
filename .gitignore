@@ -36,6 +36,7 @@ npm-debug.log
 yarn-error.log
 
 # BUCK
+.expo/*
 buck-out/
 \.buckd/
 *.keystore
