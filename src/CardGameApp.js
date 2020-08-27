@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react';
 import {
-  View, SafeAreaView, Text, Button
+  View, SafeAreaView, Text
 } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
+
 import CardsRow from './components/CardsRow';
-import styles from '../styles/styles';
+import Header from './components/Header';
+import AppButton from './components/AppButton';
+import styles from './styles/styles';
+
 import { onCardClickAction, resetCardsClick, refreshCardAction } from './action/CardGameActions';
 import { groupBy, showAlert } from './utils/utils';
 
@@ -41,22 +45,16 @@ const CardGameApp = () => {
 
   return (
     <>
-      <SafeAreaView style={{ flex: 1 }}>
-        <Text style={styles.cardText}>
-          {' '}
-          Number of steps:
-          {cardData.counter}
+      <Header title="CARD GAME APP" />
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.labelText}>
+          {'STEPS: '}
+          <Text style={styles.scoreText}>{cardData.counter}</Text>
         </Text>
-        <View style={{
-          margin: 10,
-          flex: 1,
-          flexDirection: 'row',
-          backgroundColor: '#cacaca'
-        }}
-        >
+        <View style={styles.cardContainer}>
           {renderCardData()}
         </View>
-        <Button onPress={() => resetClicked()} title="RESET" />
+        <AppButton onPress={() => resetClicked()} title="RESTART" />
       </SafeAreaView>
     </>
   );

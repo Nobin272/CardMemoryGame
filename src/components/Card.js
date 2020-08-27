@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import {
-  View, Text, TouchableOpacity, Animated, StyleSheet
+  View, Text, TouchableOpacity, Animated
 } from 'react-native';
+import cardStyle from '../styles/cardStyle';
 
 const Card = (props) => {
   const { isFlipped, number } = props;
@@ -60,15 +61,15 @@ const Card = (props) => {
   };
 
   return (
-    <TouchableOpacity onPress={() => isClicked(props.card)} style={styles.container}>
+    <TouchableOpacity onPress={() => isClicked(props.card)} style={cardStyle.container}>
       <View>
-        <Animated.View style={[styles.flipCard, frontAnimatedStyle]}>
-          <Text style={styles.flipText}>
+        <Animated.View style={[cardStyle.flipCard, frontAnimatedStyle]}>
+          <Text style={cardStyle.flipText}>
             {isFlipped === true ? number : '?'}
           </Text>
         </Animated.View>
-        <Animated.View style={[backAnimatedStyle, styles.flipCard, styles.flipCardBack]}>
-          <Text style={styles.flipText}>
+        <Animated.View style={[backAnimatedStyle, cardStyle.flipCard, cardStyle.flipCardBack]}>
+          <Text style={cardStyle.flipText}>
             {isFlipped === true ? number : '?'}
           </Text>
         </Animated.View>
@@ -76,34 +77,5 @@ const Card = (props) => {
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    backgroundColor: 'white',
-    justifyContent: 'center',
-    margin: 5
-  },
-  flipCard: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'green',
-    backfaceVisibility: 'hidden',
-  },
-  flipCardBack: {
-    backgroundColor: 'blue',
-    position: 'absolute',
-    top: 0,
-  },
-  flipText: {
-    width: 90,
-    padding: 20,
-    textAlign: 'center',
-    fontSize: 30,
-    color: 'white',
-    fontWeight: 'bold',
-  }
-});
 
 export default Card;

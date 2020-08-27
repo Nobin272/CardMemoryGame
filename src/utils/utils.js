@@ -26,7 +26,6 @@ export const randomNumbers = () => {
   // Duplicate and generate 12 digit arrays
   const cloneNums = [...nums];
   const numberArray = cloneNums.concat([...nums]);
-  console.log(`Random array is: ${numberArray}`);
   return numberArray;
 };
 

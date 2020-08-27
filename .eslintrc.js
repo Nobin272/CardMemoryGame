@@ -14,7 +14,8 @@ module.exports = {
     'no-restricted-syntax': 'off',
     'no-return-assign': 'off',
     'react/destructuring-assignment': 'off',
-    'react/jsx-props-no-spreading': 'off'
+    'react/jsx-props-no-spreading': 'off',
+    'react/react-in-jsx-scope': 'off'
   },
   globals: {
     fetch: false
