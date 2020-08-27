@@ -1,21 +1,14 @@
-import {CARDS_CLICK, RESET_COUNTER, REFRESH_CARD } from "../utils/constants"
+import { CARDS_CLICK, RESET_COUNTER, REFRESH_CARD } from '../utils/constants';
 
-export const onCardClickAction = (card) => {
-    return {
-        type: CARDS_CLICK,
-        card: card
-    }
-}
+export const onCardClickAction = (card) => ({
+  type: CARDS_CLICK,
+  card
+});
 
-export const resetCardsClick = () => {
-    return {
-        type: RESET_COUNTER
-    }
-} 
+export const resetCardsClick = () => ({
+  type: RESET_COUNTER
+});
 
-export const refreshCardAction = (card) => {
-    return {
-        type: REFRESH_CARD,
-        card: card
-    }
-} 
+export const refreshCardAction = () => ({
+  type: REFRESH_CARD
+});
