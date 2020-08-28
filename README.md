@@ -5,14 +5,11 @@ This is a Memory Game application that build using react-native.
 This uses react, redux and hooks for the implementation of the functionalities.
 
 ## Demo of the application
-![Alt text](/screenshots/Demo.mov?raw=true "Optional Title")
-
-Click in the below image to view the demo of the application (youtube).
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/aiIYLY4prWI/0.jpg)](https://youtu.be/aiIYLY4prWI)
+![Alt text](screenshots/Demo.mov?raw=true "Optional Title")
 
 ## Screenshots
-![Alt text](/screenshots/screen1.png?raw=true "Screen 1 - Memory Card Game")
-![Alt text](/screenshots/screen2.png?raw=true "Screen 1 - Memory Card Game")
+![Alt text](screenshots/screen1.png?raw=true "Screen 1 - Memory Card Game")
+![Alt text](screenshots/screen2.png?raw=true "Screen 1 - Memory Card Game")
 
 ## Project Highlights
 1. Included unit testing that covering more than 80* of the code. Report is available in the folder coverage/
