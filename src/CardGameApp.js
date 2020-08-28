@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import CardsRow from './components/CardsRow';
 import Header from './components/Header';
-import AppButton from './components/AppButton';
+import GameAppButton from './components/GameAppButton';
 import styles from './styles/styles';
 
 import { onCardClickAction, resetCardsClick, refreshCardAction } from './action/CardGameActions';
@@ -54,7 +54,7 @@ const CardGameApp = () => {
         <View style={styles.cardContainer}>
           {renderCardData()}
         </View>
-        <AppButton onPress={() => resetClicked()} title="RESTART" />
+        <GameAppButton onPress={() => resetClicked()} title="RESTART" />
       </SafeAreaView>
     </>
   );

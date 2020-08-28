@@ -5,10 +5,10 @@ import {
 
 import styles from '../styles/styles';
 
-const AppButton = ({ onPress, title }) => (
+const GameAppButton = ({ onPress, title }) => (
   <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
     <Text style={styles.appButtonText}>{title}</Text>
   </TouchableOpacity>
 );
 
-export default AppButton;
+export default GameAppButton;

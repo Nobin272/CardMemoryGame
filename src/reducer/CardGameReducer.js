@@ -34,7 +34,6 @@ const onSuccessGuess = (state) => {
   state.canFlip = false;
   state.isSuccessGuess = true;
 };
-
 const onFailureGuess = (state) => {
   state.canFlip = false;
   state.isSuccessGuess = false;

@@ -26,16 +26,16 @@ const Card = (props) => {
     setValue(props.isFlipped === true ? 0 : 180);
   }, [isFlipped]);
 
-  const flipCard = () => {
+  const flipCard = async () => {
     if (value >= 90) {
-      Animated.spring(animatedValue, {
+      await Animated.spring(animatedValue, {
         toValue: 0,
         friction: 8,
         tension: 10,
         useNativeDriver: true
       }).start();
     } else {
-      Animated.spring(animatedValue, {
+      await Animated.spring(animatedValue, {
         toValue: 180,
         friction: 8,
         tension: 10,
