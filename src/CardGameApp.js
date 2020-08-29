@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import {
   View, SafeAreaView, Text
 } from 'react-native';
@@ -11,15 +11,18 @@ import styles from './styles/styles';
 
 import { onCardClickAction, resetCardsClick, refreshCardAction } from './action/CardGameActions';
 import { groupBy, showAlert } from './utils/utils';
+import { LocalizationContext, LocalizationProvider } from '../locales/translations';
 
 const CardGameApp = () => {
   const cardData = useSelector((state) => state);
   const dispatch = useDispatch();
+  const { translations, initializeAppLanguage } = useContext(LocalizationContext);
 
   const cardClicked = (card) => dispatch(onCardClickAction(card));
   const resetClicked = () => dispatch(resetCardsClick());
   const refreshAction = () => dispatch(refreshCardAction());
 
+  initializeAppLanguage();
   const onCardClicked = (card) => {
     cardClicked(card);
     // Verify the cards after 1 seconds - To refresh
@@ -29,8 +32,13 @@ const CardGameApp = () => {
   };
 
   useEffect(() => {
+    initializeAppLanguage();
+  }, []);
+
+  useEffect(() => {
     if (cardData.isCompleted === true) {
-      showAlert('CONGRATS!', `You have successfully completed in ${cardData.counter} steps. Do you want to try again?`, resetClicked);
+      const message = translations.formatString(translations.SuccessfullyCompleted, { steps: cardData.counter, }) + translations.TryAgainQuestion;
+      showAlert(translations.Congrats, message, resetClicked);
     }
   }, [cardData.isCompleted]);
 
@@ -44,19 +52,19 @@ const CardGameApp = () => {
   };
 
   return (
-    <>
-      <Header title="CARD GAME APP" />
+    <LocalizationProvider>
+      <Header title={translations.MemoryCardGame} />
       <SafeAreaView style={styles.container}>
         <Text style={styles.labelText}>
-          {'STEPS: '}
+          {translations.Steps}
           <Text style={styles.scoreText}>{cardData.counter}</Text>
         </Text>
         <View style={styles.cardContainer}>
           {renderCardData()}
         </View>
-        <GameAppButton onPress={() => resetClicked()} title="RESTART" />
+        <GameAppButton onPress={() => resetClicked()} title={translations.Restart} />
       </SafeAreaView>
-    </>
+    </LocalizationProvider>
   );
 };
 

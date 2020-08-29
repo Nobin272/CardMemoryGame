@@ -1,0 +1,10 @@
+{
+    "MemoryCardGame": "MEMORY CARD GAME",
+    "Congrats": "Congratulations",
+    "SuccessfullyCompleted": "You have successfully completed this game in {steps} moves.\n",
+    "TryAgainQuestion": "Do you want to try again?",
+    "Steps": "STEPS: ",
+    "Restart": "RESTART",
+    "Cancel": "Cancel",
+    "TryAgain": "TRY AGAIN"
+}

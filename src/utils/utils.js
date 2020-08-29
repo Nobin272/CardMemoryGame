@@ -51,17 +51,8 @@ export const groupBy = (array) => array.reduce((result, currentValue) => {
 }, {});
 
 export const showAlert = (title, message, action) => {
-  Alert.alert(
-    title,
-    message,
-    [
-      {
-        text: 'Cancel',
-        onPress: () => {},
-        style: 'cancel'
-      },
-      { text: 'TRY AGAIN', onPress: () => action() }
-    ],
-    { cancelable: false }
-  );
+  Alert.alert(title, message,
+    [{ text: 'Cancel', onPress: () => {}, style: 'cancel' },
+      { text: 'TRY AGAIN', onPress: () => action() }],
+    { cancelable: false });
 };
